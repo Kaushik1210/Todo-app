@@ -178,7 +178,7 @@ const App = () => {
 
               </div>
 
-              <div className='h-11 bg-con-bg rounded mt-2 p-1 flex sm:hidden '>
+              <div className='h-11 bg-con-bg rounded-lg mt-2 p-1 flex sm:hidden shadow-2xl '>
                   <div className="flex w-full justify-around items-center cursor-pointer text-footer">
                            <a onClick={()=>{
                              setFilterPick('all')
