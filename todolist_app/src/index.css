@@ -12,10 +12,10 @@
     --app-bg: hsl(235, 21%, 11%);
     --main-theme: hsl(235, 24%, 19%);
     --Light-Grayish-Blue: hsl(234, 39%, 85%); /* drag */
-    --hover: hsl(236, 33%, 92%);
-    --Grayish-Blue: hsl(234, 11%, 52%);    
+    --hover: hsla(235, 17%, 27%, 0.557)   ;  
     --ring:rgb(55, 65, 81);    
-
+    --Grayish-Blue: hsl(236, 9%, 61%);   
+    
     --d-bg:url(./assets/bgdesktopdark.jpg);
     --m-bg:url(./assets/bgmobiledark.jpg)
 }
@@ -27,6 +27,8 @@
     --ring:hsl(233, 11%, 84%);
     --Light-Grayish-Blue: hsl(233, 11%, 84%);
     --Grayish-Blue: hsla(237, 9%, 61%, 0.856);   
+    
+    --hover: hsl(236, 33%, 92%);
     
     --d-bg:url(./assets/bgdesktoplight.jpg);
     --m-bg:url(./assets/bgmobilelight.jpg)
@@ -52,10 +54,12 @@ body{
     position: relative;
 }
 
-.container:hover{
+.container:hover {
     background:linear-gradient(var(--main-theme),var(--main-theme))padding-box,
     linear-gradient(to right,hsl(192, 100%, 67%) ,hsl(280, 87%, 65%)) border-box ;
 }
+
+
 
 .checkbox{
     position: absolute;

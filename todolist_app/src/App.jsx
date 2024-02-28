@@ -4,11 +4,15 @@ import TODO from './TODO'
 
 const App = () => {  
 
-  const [newItem,setNewItem] = useState(' ')
-  const [todos,setTodos]=useState([])
+  const [newItem,setNewItem] = useState(' ')  
   const [active,setActive]=useState('all')
   const [filter,setFilter]=useState('all')
-  const [theme, setTheme] = useState(true)  
+  const [theme, setTheme] = useState(true) 
+  
+  const [todos,setTodos]=useState(()=>{
+    const todoList=localStorage.getItem('todo lists')
+    return todoList?JSON.parse(todoList):[]
+  })
 
   const filteredList = todos.filter(t=>{
     if(filter === 'all') return true
@@ -48,6 +52,12 @@ const App = () => {
     }
     setTodos([...todos,{id: todos.length + 1,title: todoItem,completed: false}])
   }
+
+  //add data to local storage
+
+  useEffect(()=>{
+    localStorage.setItem('todo lists',JSON.stringify(todos))
+  }, [todos]);
 
   
 
@@ -116,7 +126,7 @@ const App = () => {
                 </form>
               </div>
 
-              <div className="  rounded mt-10 bg-con-bg shadow-2xl ">
+              <div className="  rounded-lg mt-10 bg-con-bg transition-all ease-in-out duration-500 shadow-2xl ">
 
                 <ul >
                 {filteredList.map((todo,index)=>{

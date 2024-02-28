@@ -12,7 +12,8 @@ module.exports = {
       },
       backgroundColor:{             
         'app':'var(--app-bg)',
-        'con-bg': 'var(--main-theme)',        
+        'con-bg': 'var(--main-theme)', 
+        'hover':'var(--hover)'       
       },
       colors:{
         'ring':'var(--ring)',
