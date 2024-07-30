@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --Bright-Blue: hsl(220, 98%, 61%);
+    --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+    --font-color: hsl(233, 11%, 84%);
+    --app-bg: hsl(235, 21%, 11%);
+    --main-theme: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%); /* drag */
+    --hover: hsla(235, 17%, 27%, 0.557)   ;  
+    --ring:rgb(55, 65, 81);    
+    --Grayish-Blue: hsl(236, 9%, 61%);   
+    
+    --d-bg:url(./assets/bgdesktopdark.jpg);
+    --m-bg:url(./assets/bgmobiledark.jpg)
+}
+
+[data-theme='light']{
+    --main-theme: hsl(0, 0%, 98%);
+    --font-color:hsl(237, 14%, 26%);
+    --app-bg: hsl(236, 33%, 92%);
+    --ring:hsl(233, 11%, 84%);
+    --Light-Grayish-Blue: hsl(233, 11%, 84%);
+    --Grayish-Blue: hsla(237, 9%, 61%, 0.856);   
+    
+    --hover: hsl(236, 33%, 92%);
+    
+    --d-bg:url(./assets/bgdesktoplight.jpg);
+    --m-bg:url(./assets/bgmobilelight.jpg)
+}
+
+body{
+    background-color: hsl(235, 21%, 11%) ;
+    /* hello */
+    
+}
+
+.light-mode{
+    background-color: hsl(236, 33%, 92%) ;
+
+}
+
+.container{
+    width: 20px;
+    height: 20px;
+    border: 1px solid transparent;
+    background:linear-gradient(var(--main-theme),var(--main-theme))padding-box,
+    var(--ring) border-box ;
+    border-radius: 50%;
+    position: relative;
+}
+
+.container:hover {
+    background:linear-gradient(var(--main-theme),var(--main-theme))padding-box,
+    linear-gradient(to right,hsl(192, 100%, 67%) ,hsl(280, 87%, 65%)) border-box ;
+}
+
+
+
+.checkbox{
+    /* position: absolute; */
+    -webkit-appearance:none;
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+    cursor: pointer;
+    
+}
+
+.checkbox:checked{
+    background: linear-gradient(to right,hsl(192, 100%, 67%) ,hsl(280, 87%, 65%));
+}
+
+.checkbox::before{
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+    background-image: url(./assets/iconcheck.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.checkbox::before{
+    display: none;
+}
+
+.checkbox:checked::before{
+    display: block;
+}
+
+
